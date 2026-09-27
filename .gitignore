@@ -1,0 +1,35 @@
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.idea/
+*.iml
+.vscode/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Java
+target/
+build/
+.gradle/
+*.class
+
+# Data (downloaded or generated; re-create with scripts)
+data/raw/
+data/cache/
+*.db
+*.sqlite
+
+# Claude Code: local, per-machine settings
+.claude/settings.local.json
