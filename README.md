@@ -27,6 +27,19 @@ measurement.
    ablation test.
 7. **Paper trading:** a scheduled pipeline logs weekly predictions without real money and tracks the results.
 
+## What counts as success
+
+Beating the Pinnacle closing line on 1X2 in the top leagues, with public data and classic models, is
+very unlikely: those odds already contain the information of professional syndicates with far more
+data. So success is defined in levels, and each level is a result worth reporting:
+
+1. **Calibrated:** when the model says 60%, the event happens about 60% of the time.
+2. **Close to the market:** log loss within a small gap of de-vigged Pinnacle closing odds.
+3. **Beats soft bookmakers:** better than soft bookmakers' opening odds, at least in some markets.
+4. **Beats the closing line:** very unlikely; if it happens, the first suspect is data leakage.
+
+A negative result, measured and explained, is a valid outcome.
+
 ## Architecture (target)
 
 ```
@@ -48,6 +61,12 @@ The project is developed with Claude Code as a pair programmer, in a "teaching m
 maths and models are written by hand, and the AI provides tests, reviews, and explanations.
 The rules are in [`CLAUDE.md`](CLAUDE.md), and the lessons learned are in
 [`docs/ai-workflow.md`](docs/ai-workflow.md).
+
+## Data
+
+Historical results and odds come from [football-data.co.uk](https://www.football-data.co.uk),
+which provides them free for private, non-commercial use. The data files are not redistributed in
+this repository; `model/scripts/download_football_data.py` downloads them for personal use.
 
 ## Disclaimer
 
