@@ -1,4 +1,4 @@
-"""Tests for football_edge.devig. Written before the implementation.
+"""Tests for football_edge.devig.
 
 Reference match: Liverpool 2-0 Man City, Premier League, 2024-12-01.
 Pinnacle closing 1X2 odds: home 2.06, draw 3.76, away 3.60.
@@ -73,7 +73,10 @@ def test_devig_returns_a_list_in_the_same_order():
 # --- invalid input -----------------------------------------------------------------------
 
 @pytest.mark.parametrize("function", [implied_probabilities, overround, devig_proportional])
-@pytest.mark.parametrize("bad_odds", [[], [2.0], [1.0, 2.0], [0.5, 3.0], [-2.0, 2.0]])
+@pytest.mark.parametrize(
+    "bad_odds",
+    [[], [2.0], [1.0, 2.0], [0.5, 3.0], [-2.0, 2.0], [float("nan"), 2.0]],
+)
 def test_invalid_odds_raise_value_error(function, bad_odds):
     with pytest.raises(ValueError):
         function(bad_odds)
