@@ -1,5 +1,6 @@
-# Direct dependencies of the model/ package. Install with:
+# Direct dependencies of the model/ package. Install with (from model/):
 #   py -m venv .venv
 #   .venv\Scripts\python -m pip install -r requirements.txt
+#   .venv\Scripts\python -m pip install -e .
 pandas==3.0.6
 pytest==9.1.1
