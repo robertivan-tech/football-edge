@@ -15,6 +15,36 @@ Entry format:
 
 ---
 
+## 2026-09-28 — Edge cases become tests
+
+**Situation:** I implemented `devig()` against tests written first, and all of them passed.
+
+**What happened:** In review, Claude checked one case the tests did not cover: `NaN` odds.
+`nan <= 1` is `False`, so the value passed validation and the function returned `[nan, nan]`
+without an error. My first fix (`odd != NaN`) did not work either, because `NaN` is not equal to
+anything, not even to itself.
+
+**Correction / decision:** The check became `not odd > 1`, which also rejects `NaN`. A `NaN` case
+was added to the parametrized validation test.
+
+**Lesson:** Green tests only prove what they test. When a review finds an edge case, it goes into
+the test suite, so the bug cannot quietly come back.
+
+## 2026-09-28 — Write for the external reader from the start
+
+**Situation:** The repo is a public portfolio, but the first drafts carried notes from the working
+process: "Written by Robert" in a docstring, "the implementation is left for Robert" in a commit
+message.
+
+**What happened:** These notes make sense during the session and look unprofessional to anyone
+reading the repo later. Removing them afterwards meant editing files and rewriting local commit
+messages before the push.
+
+**Correction / decision:** Code, tests, docstrings and commit messages describe what the code does,
+not who wrote which part. The workflow is explained once, in the README.
+
+**Lesson:** Every text that lands in git has an external reader. Write it for them the first time.
+
 ## 2026-09-27 — Context has to live in the repo, not in the chat
 
 **Situation:** I work on two PCs, and the planning conversation happened on only one of them.
