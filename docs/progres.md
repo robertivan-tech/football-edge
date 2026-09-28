@@ -12,8 +12,10 @@ Build a system that estimates football match probabilities and measures whether 
 market. Portfolio project for a backend / AI engineer part-time job. See `CLAUDE.md`.
 
 **2. Decisions made**
-- Hybrid stack: Python for data, models and AI; Java 21 + Spring Boot for the backend.
+- Hybrid stack: Python for data, models and AI; Java 21 + Quarkus for the backend.
   *Why:* covers both target roles, and each language is used where it is strongest.
+- Quarkus instead of Spring Boot for the backend (changed 2026-09-28).
+  *Why:* Robert has used Quarkus before and finds it more interesting to work with than Spring.
 - Maths first, backend later. *Why:* if the model does not beat the market, nothing else matters.
 - The LLM extracts features and does not decide bets. *Why:* LLM output is not a calibrated probability.
 - Public repo on GitHub (`robertivan-tech/football-edge`); `CLAUDE.md` plus this file carry the

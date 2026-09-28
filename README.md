@@ -30,7 +30,7 @@ measurement.
 ## Architecture (target)
 
 ```
-backend/  Java 21 + Spring Boot + PostgreSQL   ingestion, storage, REST API
+backend/  Java 21 + Quarkus + PostgreSQL       ingestion, storage, REST API
 model/    Python + FastAPI                     models, evaluation, LLM features
 ```
 
@@ -38,7 +38,7 @@ model/    Python + FastAPI                     models, evaluation, LLM features
 
 - [ ] Phase 1: data pipeline, de-vig, Elo, Poisson
 - [ ] Phase 2: backtesting and evaluation report
-- [ ] Phase 3: Spring Boot backend and model service
+- [ ] Phase 3: Quarkus backend and model service
 - [ ] Phase 4: LLM feature extraction and ablation study
 - [ ] Phase 5: Docker Compose, CI, dashboard, final report
 

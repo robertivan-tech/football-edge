@@ -65,7 +65,7 @@ Robert wants to **learn**, not just collect code.
 [Sources: fixtures, odds, news]
         │
         ▼
-backend/  Java 21 + Spring Boot ──── PostgreSQL
+backend/  Java 21 + Quarkus ──────── PostgreSQL
   - scheduled ingestion of fixtures and odds
   - stores predictions and paper bets
   - REST API + dashboard data
@@ -77,7 +77,7 @@ model/    Python 3.13 + FastAPI
   - LLM feature extraction (structured outputs)
 ```
 
-Phase 1–2 use **SQLite** and plain Python scripts. PostgreSQL, Spring Boot, and Docker come in phase 3.
+Phase 1–2 use **SQLite** and plain Python scripts. PostgreSQL, Quarkus, and Docker come in phase 3.
 
 ## Roadmap
 
@@ -85,7 +85,7 @@ Phase 1–2 use **SQLite** and plain Python scripts. PostgreSQL, Spring Boot, an
 |---|---|---|
 | 1. Data and maths | 1–2 | Historical data (football-data.co.uk) → SQLite; de-vig; Elo; Poisson |
 | 2. Evaluation | 3 | Walk-forward backtest; log loss, Brier, calibration; Monte Carlo of bankroll (singles vs. accumulators) |
-| 3. Backend | 4–5 | Spring Boot + PostgreSQL; live odds ingestion (e.g. The Odds API); FastAPI model service |
+| 3. Backend | 4–5 | Quarkus + PostgreSQL; live odds ingestion (e.g. The Odds API); FastAPI model service |
 | 4. AI layer | 6–7 | LLM news → JSON features; ablation test; model-tier choice with cost estimate |
 | 5. Delivery | 8 | Docker Compose, GitHub Actions CI, dashboard, README and results report |
 
