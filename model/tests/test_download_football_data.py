@@ -1,11 +1,6 @@
 """Tests for the pure helpers of the downloader. No network access."""
 
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-
-from download_football_data import csv_url, local_path, season_code  # noqa: E402
+from download_football_data import csv_url, local_path, season_code
 
 
 def test_season_code():
